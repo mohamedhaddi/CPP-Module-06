@@ -1,5 +1,5 @@
 CC=c++
-SRC=main.cpp
+SRC=main.cpp Base.cpp A.cpp B.cpp C.cpp
 CFLAGS=-Wall -Wextra -Werror -std=c++98
 DFLAGS=-g -fsanitize=address 
 NAME=dynamic_cast
