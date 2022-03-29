@@ -1,7 +1,7 @@
 CC=c++
 SRC=main.cpp ScalarConverter.cpp
 CFLAGS=-Wall -Wextra -Werror -std=c++98
-DFLAGS=-g
+DFLAGS=-g -fsanitize=address 
 NAME=convert
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: mhaddi <mhaddi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 14:14:50 by mhaddi            #+#    #+#             */
-/*   Updated: 2022/03/29 18:56:11 by mhaddi           ###   ########.fr       */
+/*   Updated: 2022/03/29 20:51:49 by mhaddi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 int intMin = std::numeric_limits<int>::min();
 int intMax = std::numeric_limits<int>::max();
-int charMin = std::numeric_limits<char>::min();
-int charMax = std::numeric_limits<char>::max();
-int floatMin = std::numeric_limits<float>::min();
-int floatMax = std::numeric_limits<float>::max();
-int doubleMin = std::numeric_limits<double>::min();
-int doubleMax = std::numeric_limits<double>::max();
+char charMin = std::numeric_limits<char>::min();
+char charMax = std::numeric_limits<char>::max();
+float floatMin = std::numeric_limits<float>::min();
+float floatMax = std::numeric_limits<float>::max();
+double doubleMin = std::numeric_limits<double>::min();
+double doubleMax = std::numeric_limits<double>::max();
 
 ScalarConverter::ScalarConverter(void)
 {
@@ -216,9 +216,9 @@ void ScalarConverter::convertToOtherTypes()
 		this->_charValue = static_cast<char>(this->_floatValue);
 		this->_doubleValue = static_cast<double>(this->_floatValue);
 
-		if (this->_floatValue > charMax || this->_floatValue < charMin)
+		if (this->_floatValue > charMax || this->_floatValue < charMin || this->_floatValue != this->_floatValue)
 			this->_isValidChar = false;
-		if (this->_floatValue > intMax || this->_floatValue < intMin)
+		if (this->_floatValue > intMax || this->_floatValue < intMin || this->_floatValue != this->_floatValue)
 			this->_isValidInt = false;
 	}
 	else if (this->_typeOfValue == "double")
@@ -227,9 +227,9 @@ void ScalarConverter::convertToOtherTypes()
 		this->_charValue = static_cast<char>(this->_doubleValue);
 		this->_floatValue = static_cast<float>(this->_doubleValue);
 
-		if (this->_doubleValue > charMax || this->_doubleValue < charMin)
+		if (this->_doubleValue > charMax || this->_doubleValue < charMin || this->_doubleValue != this->_doubleValue)
 			this->_isValidChar = false;
-		if (this->_doubleValue > intMax || this->_doubleValue < intMin)
+		if (this->_doubleValue > intMax || this->_doubleValue < intMin || this->_doubleValue != this->_doubleValue)
 			this->_isValidInt = false;
 		if (this->_doubleValue > floatMax || this->_doubleValue < floatMin)
 			this->_isValidFloat = false;
