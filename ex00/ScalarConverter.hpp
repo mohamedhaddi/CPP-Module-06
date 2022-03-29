@@ -6,7 +6,7 @@
 /*   By: mhaddi <mhaddi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 14:12:54 by mhaddi            #+#    #+#             */
-/*   Updated: 2022/03/29 16:01:03 by mhaddi           ###   ########.fr       */
+/*   Updated: 2022/03/29 18:48:02 by mhaddi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ class ScalarConverter
 		ScalarConverter &operator=(ScalarConverter const &rhs);
 
 		void convert(void);
-		char getCharValue(void) const;
-		int getIntValue(void) const;
-		float getFloatValue(void) const;
-		double getDoubleValue(void) const;
+		void printAllTypes() const;
 
 	private:
 		
@@ -41,12 +38,16 @@ class ScalarConverter
 		float _floatValue;
 		double _doubleValue;
 		char _charValue;
+		bool _isValidInt;
+		bool _isValidChar;
+		bool _isValidFloat;
+		bool _isValidDouble;
 
 		void detectType();
+		bool isDouble() const;
+		bool isFloat() const;
 		bool isInt() const;
 		bool isChar() const;
-		bool isFloat() const;
-		bool isDouble() const;
 
 		void convertToRightType();
 		void convertToOtherTypes();
